@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
@@ -6,8 +6,9 @@
         <title>🌲 Vardi</title>
         <style>
             body {
-                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
-                    Roboto, Arial, sans-serif;
+                font-family:
+                    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                    Arial, sans-serif;
                 line-height: 1.2;
                 max-width: 800px;
                 margin: 40px auto;
@@ -63,6 +64,93 @@
                 overflow: hidden;
             }
 
+            /* Custom styling for the publications section */
+            #papers ul {
+                list-style: none;
+                padding-left: 0;
+            }
+
+            #papers li {
+                margin-bottom: 24px; /* More breathing room between papers */
+                line-height: 1.5; /* Better readability for citations */
+            }
+
+            .pub-title {
+                display: block;
+                font-size: 1.05rem;
+                font-weight: 600;
+                margin-bottom: 4px;
+            }
+
+            .pub-title a {
+                color: #0366d6;
+                text-decoration: none;
+            }
+
+            .pub-title a:hover {
+                text-decoration: underline;
+            }
+
+            .pub-authors,
+            .pub-journal {
+                display: block;
+                color: #444;
+                margin-bottom: 4px;
+            }
+
+            /* Resource links container */
+            .pub-links {
+                margin-top: 6px;
+                display: flex;
+                gap: 8px;
+                align-items: center;
+            }
+
+            /* Button style matching your site's clean aesthetic */
+            .pub-links a,
+            .pub-links summary {
+                display: inline-block;
+                padding: 2px 8px;
+                background-color: #f6f8fa;
+                color: #24292e;
+                text-decoration: none;
+                border-radius: 6px;
+                font-size: 0.8rem;
+                border: 1px solid #d1d5da;
+            }
+
+            .pub-links a:hover,
+            .pub-links summary:hover {
+                background-color: #f3f4f6;
+                text-decoration: none;
+            }
+
+            /* Pure HTML BibTeX dropdown setup */
+            .pub-links details {
+                display: inline-block;
+            }
+
+            .pub-links summary {
+                cursor: pointer;
+                list-style: none;
+            }
+
+            .pub-links summary::-webkit-details-marker {
+                display: none; /* Hides default triangle in Safari */
+            }
+
+            .bibtex-block {
+                background: #f6f8fa;
+                border-left: 3px solid #0366d6;
+                padding: 10px;
+                margin-top: 8px;
+                font-size: 0.75rem;
+                overflow-x: auto;
+                font-family: monospace;
+                white-space: pre;
+                color: #24292e;
+            }
+
             @media (max-width: 600px) {
                 body {
                     padding: 15px;
@@ -103,20 +191,15 @@
                     class="profile-pic"
                 />
                 <p>
-                    I am a recent PhD graduate from the MIT/WHOI Joint-Program.
-                    During my PhD, I worked with Prof. John Leonard and Dr.
+                    I am a tech staff member at MIT Lincoln Laboratory. Prior to
+                    this, I graduated with a PhD from the MIT/WHOI Joint
+                    Program. There, I worked with Prof. John Leonard and Dr.
                     Julien Bonnel on novel machine learning methods for recovery
                     of seafloor acoustic properties and underwater source
-                    localization. Prior to starting my Ph.D., I've received a
-                    M.Sc. in Energy Engineering from the Technion - Israel
-                    Institute of Technology where I worked with Prof. Guy Ramon
-                    on a novel adsorption based thermo-acoustic refrigeration
-                    technology. I am now a tech staff member at MIT Lincoln
-                    Labs. I am curious about the intersection of
-                    acoustics, signal processing, and machine learning, and I am
-                    looking for interesting problems to apply these tools to
-                    solve challenging problems in oceanography and environmental
-                    monitoring.
+                    localization. Before starting my PhD, I've received a M.Sc.
+                    in Energy Engineering from the Technion - Israel Institute
+                    of Technology where I worked with Prof. Guy Ramon on a novel
+                    adsorption based thermo-acoustic refrigeration technology.
                 </p>
             </div>
         </section>
@@ -126,7 +209,8 @@
             <h2>Education</h2>
             <ul>
                 <li>
-                    2025 - Ph.D. in Mechanical and Oceanographic Engineering, MIT/WHOI Joint Program
+                    2025 - Ph.D. in Mechanical and Oceanographic Engineering,
+                    MIT/WHOI Joint Program
                 </li>
                 <li>
                     2020 - M.Sc. in Energy Engineering, Technion - Israel
@@ -145,24 +229,179 @@
             <h2>Academic Papers</h2>
             <ul>
                 <li>
-                    <b>A. Vardi</b>, P. H. Dahl, D. Dall'Osto, D. Knobles, P.
-                    Wilson, J. Leonard and J. Bonnel, “Estimation of the spatial
-                    variability of the New England Mud Patch geoacoustic
-                    properties using a distributed array of hydrophones and deep
-                    learning,” <i>J Acoust Soc Am</i>, vol. 156, no. 6, pp.
-                    4229-4241, 2024
+                    <span class="pub-title">
+                        <a
+                            href="https://doi.org/10.1121/10.0043870"
+                            target="_blank"
+                            rel="noopener"
+                        >
+                            Sensitivity analysis of normal mode algorithms using
+                            automatic differentiation
+                        </a>
+                    </span>
+                    <span class="pub-authors">
+                        <b>A. Vardi</b>, G. Averbuch, and J. J. Leonard
+                    </span>
+                    <span class="pub-journal">
+                        <i>J Acoust Soc Am</i>, vol. 159, no. 5, pp. 4576–4589
+                        (2026)
+                    </span>
+                    <div class="pub-links">
+                        <a href="files/Vardi2026.pdf" target="_blank">PDF</a>
+                        <a
+                            href="https://doi.org/10.1121/10.0043870"
+                            target="_blank"
+                            rel="noopener"
+                            >DOI</a
+                        >
+                        <details>
+                            <summary>BibTeX</summary>
+                            <pre class="bibtex-block">
+@article{vardi2026sensitivity,
+  title={Sensitivity analysis of normal mode algorithms using automatic differentiation},
+  author={Vardi, Ariel and Averbuch, Gil and Leonard, John J.},
+  journal={The Journal of the Acoustical Society of America},
+  volume={159},
+  number={5},
+  pages={4576--4589},
+  year={2026}
+}</pre
+                            >
+                        </details>
+                    </div>
                 </li>
                 <li>
-                    <b>A. Vardi</b> and J. Bonnel, “End-to-End Geoacoustic
-                    Inversion With Neural Networks in Shallow Water Using a
-                    Single Hydrophone,”
-                    <i>IEEE Journal of Oceanic Engineering</i>, vol. 49, no. 2,
-                    pp. 380-389, 2024
+                    <span class="pub-title">
+                        <a
+                            href="https://doi.org/10.1121/10.0034707"
+                            target="_blank"
+                            rel="noopener"
+                        >
+                            Estimation of the spatial variability of the New
+                            England Mud Patch geoacoustic properties using a
+                            distributed array of hydrophones and deep learning
+                        </a>
+                    </span>
+                    <span class="pub-authors">
+                        <b>A. Vardi</b>, P. H. Dahl, D. Dall'Osto, D. Knobles,
+                        P. Wilson, J. Leonard, and J. Bonnel
+                    </span>
+                    <span class="pub-journal">
+                        <i>J Acoust Soc Am</i>, vol. 156, no. 6, pp. 4229-4241
+                        (2024)
+                    </span>
+                    <div class="pub-links">
+                        <a href="files/Vardi2024b.pdf" target="_blank">PDF</a>
+                        <a
+                            href="https://doi.org/10.1121/10.0034707"
+                            target="_blank"
+                            rel="noopener"
+                            >DOI</a
+                        >
+                        <details>
+                            <summary>BibTeX</summary>
+                            <pre class="bibtex-block">
+@article{vardi2024estimation,
+author = {Vardi, Ariel and Dahl, Peter H. and Dall’Osto, David and Knobles, David and Wilson, Preston and Leonard, John and Bonnel, Julien}, 
+title = {Estimation of the spatial variability of the New England Mud Patch geoacoustic properties using a distributed array of hydrophones and deep learning}, 
+journal = {The Journal of the Acoustical Society of America
+J. Acoust. Soc. Am.}, 
+volume = {156}, 
+number = {6}, 
+pages = {4229–4241}, 
+year = {2024}
+}</pre
+                            >
+                        </details>
+                    </div>
                 </li>
+
                 <li>
-                    <b>A. Vardi-Chouchana</b> and G. Z. Ramon, “Acoustically
-                    Driven Sorption Heat Pump,” <i>Physical Review Applied</i>,
-                    vol. 16, no. 4, pp. 1, 2021
+                    <span class="pub-title">
+                        <a
+                            href="https://doi.org/10.1109/joe.2023.3331423"
+                            target="_blank"
+                            rel="noopener"
+                        >
+                            End-to-End Geoacoustic Inversion With Neural
+                            Networks in Shallow Water Using a Single Hydrophone
+                        </a>
+                    </span>
+                    <span class="pub-authors">
+                        <b>A. Vardi</b> and J. Bonnel
+                    </span>
+                    <span class="pub-journal">
+                        <i>IEEE Journal of Oceanic Engineering</i>, vol. 49, no.
+                        2, pp. 380-389 (2024)
+                    </span>
+                    <div class="pub-links">
+                        <a href="files/Vardi2024a.pdf" target="_blank">PDF</a>
+                        <a
+                            href="https://doi.org/10.1109/joe.2023.3331423"
+                            target="_blank"
+                            rel="noopener"
+                            >DOI</a
+                        >
+                        <details>
+                            <summary>BibTeX</summary>
+                            <pre class="bibtex-block">
+@article{vardi2024end,
+author = {Vardi, Ariel and Bonnel, Julien}, 
+title = {End-to-End Geoacoustic Inversion With Neural Networks in Shallow Water Using a Single Hydrophone}, 
+journal = {IEEE Journal of Oceanic Engineering}, 
+volume = {49}, 
+number = {2}, 
+pages = {380–389}, 
+year = {2024}
+}
+
+</pre
+                            >
+                        </details>
+                    </div>
+                </li>
+
+                <li>
+                    <span class="pub-title">
+                        <a
+                            href="https://doi.org/10.1103/physrevapplied.16.044044"
+                            target="_blank"
+                            rel="noopener"
+                        >
+                            Acoustically Driven Sorption Heat Pump
+                        </a>
+                    </span>
+                    <span class="pub-authors">
+                        <b>A. Vardi-Chouchana</b> and G. Z. Ramon
+                    </span>
+                    <span class="pub-journal">
+                        <i>Physical Review Applied</i>, vol. 16, no. 4, pp. 1,
+                        2021
+                    </span>
+                    <div class="pub-links">
+                        <a href="files/Vardi2021" target="_blank">PDF</a>
+                        <a
+                            href="https://doi.org/10.1103/physrevapplied.16.044044"
+                            target="_blank"
+                            rel="noopener"
+                            >DOI</a
+                        >
+                        <details>
+                            <summary>BibTeX</summary>
+                            <pre class="bibtex-block">
+@article{vardichouchana2021acoustically,
+author = {Vardi-Chouchana, Ariel and Ramon, Guy Z.}, 
+title = {Acoustically Driven Sorption Heat Pump}, 
+journal = {Physical Review Applied}, 
+volume = {16}, 
+number = {4}, 
+pages = {1}, 
+year = {2021}
+}
+</pre
+                            >
+                        </details>
+                    </div>
                 </li>
             </ul>
         </section>
