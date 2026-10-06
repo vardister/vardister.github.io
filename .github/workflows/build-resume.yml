@@ -7,6 +7,9 @@ on:
       - 'resume/**'
       - '.github/workflows/build-resume.yml'
 
+permissions:
+  contents: read
+
 jobs:
   build-resume:
     runs-on: ubuntu-latest
