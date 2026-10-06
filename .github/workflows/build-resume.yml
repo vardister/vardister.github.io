@@ -1,0 +1,29 @@
+name: Build Resume PDF
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'resume/**'
+      - '.github/workflows/build-resume.yml'
+
+jobs:
+  build-resume:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install LaTeX tooling
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y latexmk texlive-latex-base texlive-latex-recommended texlive-fonts-recommended texlive-latex-extra lmodern
+
+      - name: Build and copy resume PDF
+        run: make -C resume ci
+
+      - name: Upload generated PDF artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: resume_industry
+          path: files/resume_industry.pdf
