@@ -1,44 +1,267 @@
-\documentclass[11pt]{article}
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
 
-\usepackage[margin=1in]{geometry}
-\usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
-\usepackage{lmodern}
-\usepackage[hidelinks]{hyperref}
+\documentclass[letterpaper,11pt]{article}
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+%\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
 \usepackage{enumitem}
-\setlist[itemize]{leftmargin=*,topsep=2pt,itemsep=2pt}
-\pagestyle{empty}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+
+\usepackage[english]{babel}
+\usepackage{tabularx}
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+ \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+\usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\setlength{\footskip}{5pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+%\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      #1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 \begin{document}
 
 \begin{center}
-    {\LARGE Ariel Vardi} \\
-    \vspace{4pt}
-    \href{mailto:ariel@example.com}{ariel@example.com} \;|\; \href{https://github.com/vardister}{github.com/vardister} \;|\; \href{https://www.linkedin.com/in/ariel-vardi-334423ba/}{linkedin.com/in/ariel-vardi-334423ba}
+	\textbf{\Huge \scshape Ariel Vardi} \\ \vspace{1pt}
+	\textbf{Greater Boston, MA} \\
+	617-582-3308 $\Diamond$
+	\href{mailto:vardister@proton.me}{vardister@proton.me} $\Diamond$
+	\href{https://vardister.github.io}{vardister.github.io} $\Diamond$
+	\href{https://github.com/vardister}{github.com/vardister}
+
 \end{center}
 
-\vspace{6pt}
-\section*{Summary}
-Research scientist and machine learning engineer with experience in underwater acoustics, inverse problems, and deep learning.
+% \begin{center}
+% 	\hline
+% 	\hspace{1em} \\
+% 	I am a \textbf{U.S. citizen} with full authorization to live and work in any location.\\
+% 	\hspace{1em}
+% 	\hline
+% \end{center}
 
-\section*{Experience}
-\textbf{Tech Staff Member, MIT Lincoln Laboratory} \hfill 2025--Present
-\begin{itemize}
-    \item Building applied machine learning systems for scientific and engineering applications.
+
+%-----------EDUCATION-----------
+\section{Education}
+\resumeSubHeadingListStart
+\resumeSubheading
+{Ph.D., MIT-WHOI Joint-Program}{Cambridge, MA, USA}
+{Mechanical and Oceanographic Engineering}{2025}
+\resumeSubItem{Thesis Subject: Deep Learning Framework for Geoacoustic Inversion using Normal Mode Theory
+}
+
+\resumeSubheading
+{M.Sc., Technion - Israel Institute of Technology}{Haifa, Israel}
+{Energy Engineering, \textit{cum laude}}{2020}
+\resumeSubItem{Thesis: Sorption-Based Cooling Using Acoustic Waves - Experimental and Theoretical Exploration}
+\resumeSubheading
+{B.Sc., Technion - Israel Institute of Technology}{Haifa, Israel}
+{Environmental Engineering (Major: Chemical Engineering), \textit{cum laude}}{2017}
+\resumeSubHeadingListEnd
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+\resumeSubHeadingListStart
+\resumeSubheading
+{Research Assistant}{2020-2025}
+{Woods Hole Oceanographic Institution}{WHOI, MA, USA}
+\resumeItemListStart
+\resumeItem{Established a new Deep Learning framework for inferring ocean sediment acoustic properties using a fully automated pipeline using PyTorch and Tensorflow.}
+\resumeItem{Participated in multiple at-sea experiments that included the deployment and recovery of hydrophones, and collaborated with scientists from all over the world.}
+\resumeItem{Processed and analyzed hundreds of hours of acoustic data using Python, MATLAB and Julia.}
+\resumeItem{Developed multiple differentiable programs for underwater acoustic field modeling using Julia.}
+\resumeItem{Developed analytical models that were integrated with neural networks for establishing physics-based deep learning frameworks.}
+\resumeItemListEnd
+
+\resumeSubheading
+{Research Assistant}{2016 - 2020}
+{Thermoacoustics Lab - Technion}{Haifa, Israel}
+\resumeItemListStart
+\resumeItem{Led the Thermoacoustic Cooling project which resulted in a 450\% increase in cooling efficiency using a novel adsorption-based system.}
+\resumeItem{Developed and built an experimental Thermoacoustic system with the ability to sustain both vacuum and high pressures.}
+\resumeItem{Defined specifications, quality assurance and full development of a DAQ system using National Instruments modules and LABView.}
+\resumeItem{Derived simultaneously a mathematical model that describes the operation of the novel Thermoacoustic system and solved numerically using MATLAB.}
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+
+%-----------Conferences-----------
+\section{Conferences}
+\begin{itemize}[leftmargin=0.15in, label={}]
+	\item \textbf{A. Vardi}, J. Leonard and J. Bonnel. Spatial Variability of the Sound Speed Ratio in the New England Mud Patch Using Neural Networks. SBCEX Workshop, Providence, Rhode Island (USA), May 2024.
+	\item \textbf{A. Vardi} and J. Bonnel. A deep learning approach for geoacoustic inversion using a distributed array of unsynchronized hydrophones and explosive sound sources. In IEEE UASP meeting, Exeter, (USA), October 2023.
+	\item \textbf{A. Vardi} and J, Bonnel. An end-to-end deep learning approach for geoacoustic inversion: Application to SBCEX22 TOSSIT data. In SBCEX Workshop, San Diego CA (USA), February 2023.
+	\item \textbf{A. Vardi-Chouchana} and J. Bonnel. An end-to-end deep learning approach for joint detection, source localization, and environmental characterization using a single hydrophone in shallow water. In ASA meeting, Nashville (USA), December 2022.
 \end{itemize}
 
-\section*{Education}
-\textbf{Ph.D., Mechanical and Oceanographic Engineering, MIT/WHOI Joint Program} \hfill 2025
 
-\textbf{M.Sc., Energy Engineering, Technion} \hfill 2020
 
-\textbf{B.Sc., Environmental Engineering, Technion} \hfill 2017
+%-----------Skills-----------
+\section{Skills}
+\renewcommand{\arraystretch}{1.2} % Adjust the factor as needed
+\setlength{\tabcolsep}{0.15in}
+\begin{tabular}{l@{\hspace{50pt}}l}
+	\textbf{Programming}        & Python, MATLAB, Julia, Wolfram Mathematica, FORTRAN, C   \\
+	\textbf{Software Libraries} & PyTorch, JAX, Tensorflow, Numpy, Scipy, Lux.jl, SciML.jl \\
+	\textbf{Language}           & English (fluent), Hebrew (native), French (native)
+\end{tabular}
+\setlength{\tabcolsep}{0pt}
 
-\section*{Selected Publications}
-\begin{itemize}
-    \item Vardi et al., \emph{Sensitivity analysis of normal mode algorithms using automatic differentiation}, JASA, 2026.
-    \item Vardi et al., \emph{Estimation of the spatial variability of the New England Mud Patch geoacoustic properties using a distributed array of hydrophones and deep learning}, JASA, 2024.
-    \item Vardi and Bonnel, \emph{End-to-End Geoacoustic Inversion With Neural Networks in Shallow Water Using a Single Hydrophone}, IEEE JOE, 2024.
+
+%---------FIELD EXPERIENCE--------
+\section{Field Experience}
+\resumeSubHeadingListStart
+\resumeProjectHeading{New England Seamount Experiment (MA, USA)}{2023}
+\resumeProjectHeading{New England Mudpatch - Seabed Characterization Experiment (MA, USA)}{2022}
+\resumeProjectHeading{New England Mudpatch - Seabed Characterization Experiment (MA, USA)}{2021}
+\resumeSubHeadingListEnd
+
+
+
+
+
+%-----------Teaching Experience-----------
+\section{Teaching Experience}
+\resumeSubHeadingListStart
+\resumeSubheading{Workshop: Introduction to Python}{Summer 2023 \& 2024}{Workshop instructor}{Woods Hole, MA, USA}
+\resumeSubheading{Workshop: Introduction to MATLAB}{Summer 2021}{Workshop instructor}{Woods Hole, MA, USA}
+\resumeSubheading
+{Transport Phenomena}{Spring 2019}
+{Part of creation team, frontal teaching and course assignment grading}{Technion, Haifa, Israel}
+\resumeSubheading
+{Introduction to Environmental Engineering}{Spring 2018, Spring 2019}
+{Frontal teaching in recitations and course assignment grading}{Technion, Haifa, Israel}
+\resumeSubheading
+{Fluid Mechanics}{Fall 2017, Fall 2018}
+{Frontal teaching in recitations and course assignment grading}{Technion, Haifa, Israel}
+\resumeSubHeadingListEnd
+
+
+%-----------FELLOWSHIPS, AWARDS AND HONORS-----------
+\section{Fellowships, Awards and Honors}
+\resumeSubHeadingListStart
+\resumeSubheading{Doctoral Fellowship}{2020-2025}{WHOI-MIT Joint Program}{MA, USA}
+\resumeSubheading
+{Schulich Scholarship}{2015}
+{The Inter-University Institute for Marine Sciences and Dalhousie University}{Eilat, Israel and Halifax, Canada}
+\resumeSubHeadingListEnd
+
+
+%----------PUBLICATIONS--------------
+\section{Publications}
+\begin{itemize}[leftmargin=0.15in, label={}]
+	% TODO: check the correct formatting for the forthcoming paper
+	\item \textbf{A. Vardi}, G. Averbuch, J. Leonard, Sensitivity Analysis of Normal Mode Models using Automatic Differentiation, \emph{under review}.
+	\item \textbf{A. Vardi}, P. H. Dahl, D. Dall’Osto, D. Knobles, P. Wilson, J. Leonard, J. Bonnel, Estimation of the spatial variability of the New England Mud Patch geoacoustic properties using a distributed array of hydrophones and deep learning. J Acoust Soc Am 156, 4229–4241 (2024).
+	\item \textbf{A. Vardi} and J. Bonnel, "End-to-End Geoacoustic Inversion with Neural Networks in Shallow Water Using a Single Hydrophone", IEEE Journal of Oceanic Engineering, vol. 49, no. 2, pp. 380-389 (2024)
+	      %TODO: Change the papers below to the formatting of the above
+	\item R. Yang, N. Blanc, \textbf{A., Vardi}, N. Ouzana and G.Z.. Ramon, "PC-TAS: A design environment for phase-change and classical thermoacoustic systems", SoftwareX, 19, p.101142 (2022)
+
+	\item \textbf{A. Vardi} and G.Z. Ramon, "Acoustically Driven Sorption Heat Pump", Physical Review Applied, 16(4), p.044044 (2021)
+
 \end{itemize}
+
+%-----------Special Activities-----------
+\section{Volunteering and Additional Activities}
+\begin{itemize}[leftmargin=0.15in, label={}]
+	% \item{\textbf{2010-2013 Artillery Staff Sergeant and Field Medic in IDF}}
+	\item{\textbf{2013-2017 Volunteer in "\textit{Aharai Labagrut}" }{Mentoring for 16-19 year-old students from low social-economic backgrounds in Israel.}}
+	\item{\textbf{2015-2017 Co-Founder of "\textit{Ha-Asam Cooperative}"}{ A cooperative specialized in selling food produce from farmers at lowered prices in Israel.}}
+\end{itemize}
+
+
+% \section{References}
+% \begin{itemize}[leftmargin=0.15in, label={}]
+% 	\item \textbf{John Leonard}: jleonard@mit.edu
+% 	\item \textbf{Julien Bonnel}: jubonnel@ucsd.edu
+% 	\item \textbf{Gil Averbuch}: gil.averbuch@whoi.edu
+% 	\item \textbf{Guy Ramon}: ramong@technion.ac.il
+% \end{itemize}
+
+
 
 \end{document}
