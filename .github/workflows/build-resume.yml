@@ -17,13 +17,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Install LaTeX tooling
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y latexmk texlive-latex-base texlive-latex-recommended texlive-fonts-recommended texlive-latex-extra lmodern
+      - name: Compile resume LaTeX
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: resume.tex
+          working_directory: resume
+          args: -pdf -interaction=nonstopmode -halt-on-error
 
-      - name: Build and copy resume PDF
-        run: make -C resume ci
+      - name: Copy generated resume PDF to site files
+        run: cp resume/resume.pdf files/resume_industry.pdf
 
       - name: Upload generated PDF artifact
         uses: actions/upload-artifact@v4
